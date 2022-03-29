@@ -12,13 +12,19 @@ let cmToInch = (unit: Units) => {
 };
 
 let unit: Units = {
-  cm: 5,
+  cm: 0,
   in: 0.393700787,
 };
 
 const fSuskaiciuoti = () => {
   unit.cm = inputCm.valueAsNumber;
-  if (output != null) output.innerHTML = "Inches: " + cmToInch(unit);
+  if (output != null) {
+    if (inputCm.value == "") {
+      output.innerHTML = "No cm INPUT";
+    } else {
+      output.innerHTML = "Inches: " + cmToInch(unit);
+    }
+  }
 };
 
 if (btSkaiciuoti != null) {
