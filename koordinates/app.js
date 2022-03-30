@@ -26,10 +26,10 @@ class Point {
         return "[" + this._x + ";" + this._y + "]";
     }
     distance(p) {
-        return Math.sqrt(Math.pow(this._x - this._y, 2) + Math.pow(p.x - p.y, 2));
+        return Math.sqrt(Math.pow(p.x - this._x, 2) + Math.pow(p.y - this._y, 2));
     }
 }
-const p1 = new Point(1, 1);
+const p1 = new Point(10, 10);
 const p2 = new Point(2, 2);
-console.log(p1.distanceFromOrigin());
+// console.log(p1.distanceFromOrigin());
 console.log(p1.distance(p2));
