@@ -14,7 +14,7 @@ class Point {
     this._y = y;
   }
   public distanceFromOrigin(): number {
-    return Math.sqrt(this._x * this._x + this._y * this._y);
+    return Math.sqrt(Math.pow(this._x, 2) + Math.pow(this._y, 2));
   }
   public translate(dx: number, dy: number): number {
     return (this._x += dx), (this._y += dy);
