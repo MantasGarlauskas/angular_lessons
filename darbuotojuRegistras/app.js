@@ -43,7 +43,7 @@ if (jsonString != null) {
     });
 }
 let outputDarbuotojai = () => {
-    if (output != null && outGpm != null) {
+    if (output != null && outGpm != null && outPsd != null && outVsd != null) {
         output.innerHTML = "";
         let gpm = 0;
         let psd = 0;
@@ -59,7 +59,7 @@ let outputDarbuotojai = () => {
             btn.textContent = "Atleisti";
             btn.className = "btn btn-danger float-end";
             btn.onclick = () => {
-                console.log(`Istryneme ${darbuotojas.vardas} ${indeksas}`);
+                deleteDarbuotoja(indeksas);
             };
             li.appendChild(btn);
             output.appendChild(li);
@@ -68,6 +68,11 @@ let outputDarbuotojai = () => {
         outPsd.textContent = psd + " EUR";
         outVsd.textContent = vsd + " EUR";
     }
+};
+let deleteDarbuotoja = (indeksas) => {
+    imone.splice(indeksas, 1);
+    outputDarbuotojai();
+    localStorage.setItem("darbuotojai", JSON.stringify(imone));
 };
 if (btnPrideti != null) {
     btnPrideti.onclick = () => {
