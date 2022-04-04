@@ -50,8 +50,8 @@ class Line {
         return this._p1.toString() + this._p2.toString();
     }
     lineLenght() {
-        return Math.sqrt(Math.pow(this._p1.x - this._p2.x, 2) +
-            Math.pow(this._p1.y - this._p2.y, 2));
+        // return Math.sqrt(Math.pow(this._p1.x - this._p2.x, 2) + Math.pow(this._p1.y - this._p2.y, 2));
+        return this._p1.distance(this._p2);
     }
 }
 const p1 = new Point(1, 1);
