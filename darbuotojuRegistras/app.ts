@@ -1,4 +1,4 @@
-class Darbuotojai {
+class Darbuotojas {
   constructor(
     private _vardas: string,
     private _pavarde: string,
@@ -14,7 +14,16 @@ class Darbuotojai {
   get atlyginimas() {
     return this._atlyginimas;
   }
+  set vardas(vardas: string) {
+    this._vardas = vardas;
+  }
+  set pavarde(pavarde: string) {
+    this._pavarde = pavarde;
+  }
 
+  set atlyginimas(atlyginimas: number) {
+    this._atlyginimas = atlyginimas;
+  }
   public gpm() {
     return Math.round(this._atlyginimas * 0.2);
   }
@@ -37,9 +46,15 @@ const outGpm = document.getElementById("gpm");
 const outPsd = document.getElementById("psd");
 const outVsd = document.getElementById("vsd");
 
-let imone: Darbuotojai[] = [];
+let imone: Darbuotojas[] = [];
 
-let jsonString = localStorage.getItem("darbuotojai");
+//sukuriame naujus darbuotojus (is anksto)
+const jonas: Darbuotojas = new Darbuotojas("jonas", "jonaitis", 1200);
+const petras: Darbuotojas = new Darbuotojas("petras", "petraitis", 1200);
+imone.push(jonas);
+imone.push(petras);
+
+let jsonString = localStorage.getItem("darbuotojas");
 if (jsonString != null) {
   let data = JSON.parse(jsonString);
   interface dataDarbuotojas {
@@ -49,7 +64,7 @@ if (jsonString != null) {
   }
 
   data.forEach((obj: dataDarbuotojas) => {
-    let prod = new Darbuotojai(obj._vardas, obj._pavarde, obj._atlyginimas);
+    let prod = new Darbuotojas(obj._vardas, obj._pavarde, obj._atlyginimas);
     imone.push(prod);
   });
 }
@@ -86,26 +101,26 @@ let outputDarbuotojai = () => {
 let deleteDarbuotoja = (indeksas: number) => {
   imone.splice(indeksas, 1);
   outputDarbuotojai();
-  localStorage.setItem("darbuotojai", JSON.stringify(imone));
+  localStorage.setItem("darbuotojas", JSON.stringify(imone));
 };
 
 if (btnPrideti != null) {
   btnPrideti.onclick = () => {
     imone.push(
-      new Darbuotojai(
+      new Darbuotojas(
         inpVardas.value,
         inpPavarde.value,
         inpAtlyginimas.valueAsNumber
       )
     );
     outputDarbuotojai();
-    localStorage.setItem("darbuotojai", JSON.stringify(imone));
+    localStorage.setItem("darbuotojas", JSON.stringify(imone));
   };
 }
 
 if (btnIstrinti != null) {
   btnIstrinti.onclick = () => {
-    localStorage.removeItem("darbuotojai");
+    localStorage.removeItem("darbuotojas");
     imone = [];
     outputDarbuotojai();
   };
