@@ -56,11 +56,11 @@ class PirmaeilisDarbuotojas extends Darbuotojas {
   }
 }
 
-// class PraktikantasDarbuotojas extends Darbuotojas{
-//   constructor(){
-
-//   }
-// }
+class PraktikantasDarbuotojas extends Darbuotojas {
+  constructor(_vardas: string, _pavarde: string, _atlyginimas: number = 0) {
+    super(_vardas, _pavarde, _atlyginimas);
+  }
+}
 
 let jonas = new Darbuotojas("jonas", "jonaitis", 1200);
 let petras = new Darbuotojas("petras", "petraitis", 1200);

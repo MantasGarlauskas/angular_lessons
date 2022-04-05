@@ -53,10 +53,11 @@ class PirmaeilisDarbuotojas extends Darbuotojas {
         return Math.round((this._atlyginimas - this._npd) * 0.2);
     }
 }
-// class PraktikantasDarbuotojas extends Darbuotojas{
-//   constructor(){
-//   }
-// }
+class PraktikantasDarbuotojas extends Darbuotojas {
+    constructor(_vardas, _pavarde, _atlyginimas = 0) {
+        super(_vardas, _pavarde, _atlyginimas);
+    }
+}
 let jonas = new Darbuotojas("jonas", "jonaitis", 1200);
 let petras = new Darbuotojas("petras", "petraitis", 1200);
 const pirmaeilisDarbuotojas = new PirmaeilisDarbuotojas("jonas", "jonaitis", 500);
