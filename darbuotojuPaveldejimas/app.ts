@@ -65,15 +65,21 @@ class PraktikantasDarbuotojas extends Darbuotojas {
 // let jonas = new Darbuotojas("jonas", "jonaitis", 1200);
 // let petras = new Darbuotojas("petras", "petraitis", 1200);
 
-const pirmaeilisDarbuotojas = new PirmaeilisDarbuotojas(
-  "jonas",
-  "jonaitis",
-  500
-);
+const jonas = new PirmaeilisDarbuotojas("jonas", "jonaitis", 500);
+const petras = new PirmaeilisDarbuotojas("petras", "petraitis", 500);
 
-console.log(pirmaeilisDarbuotojas.perskaiciuotiNPD());
-console.log(pirmaeilisDarbuotojas.gpm());
-console.log(pirmaeilisDarbuotojas);
+let imone: Darbuotojas[] = [];
+
+imone.push(jonas);
+imone.push(petras);
+
+imone.forEach((darbuotojas: Darbuotojas) => {
+  console.log(``);
+});
+
+console.log(jonas.perskaiciuotiNPD());
+console.log(jonas.gpm());
+console.log(jonas);
 
 // imone.push(jonas);
 // imone.push(petras);
