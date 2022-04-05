@@ -47,9 +47,11 @@ class PirmaeilisDarbuotojas extends Darbuotojas {
     }
     get atlyginimas() {
         return this._atlyginimas;
+        this.perskaiciuotiNPD();
     }
     set atlyginimas(atlyginimas) {
         this._atlyginimas = atlyginimas;
+        this.perskaiciuotiNPD();
     }
     perskaiciuotiNPD() {
         if (this._atlyginimas < 730) {

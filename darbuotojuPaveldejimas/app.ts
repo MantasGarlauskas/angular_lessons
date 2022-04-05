@@ -49,9 +49,11 @@ class PirmaeilisDarbuotojas extends Darbuotojas {
   }
   override get atlyginimas() {
     return this._atlyginimas;
+    this.perskaiciuotiNPD();
   }
   override set atlyginimas(atlyginimas: number) {
     this._atlyginimas = atlyginimas;
+    this.perskaiciuotiNPD();
   }
   public perskaiciuotiNPD() {
     if (this._atlyginimas < 730) {
