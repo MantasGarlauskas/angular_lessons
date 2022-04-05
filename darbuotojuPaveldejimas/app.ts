@@ -62,8 +62,8 @@ class PraktikantasDarbuotojas extends Darbuotojas {
   }
 }
 
-let jonas = new Darbuotojas("jonas", "jonaitis", 1200);
-let petras = new Darbuotojas("petras", "petraitis", 1200);
+// let jonas = new Darbuotojas("jonas", "jonaitis", 1200);
+// let petras = new Darbuotojas("petras", "petraitis", 1200);
 
 const pirmaeilisDarbuotojas = new PirmaeilisDarbuotojas(
   "jonas",

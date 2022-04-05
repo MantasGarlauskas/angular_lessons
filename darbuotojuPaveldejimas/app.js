@@ -58,8 +58,8 @@ class PraktikantasDarbuotojas extends Darbuotojas {
         super(_vardas, _pavarde, _atlyginimas);
     }
 }
-let jonas = new Darbuotojas("jonas", "jonaitis", 1200);
-let petras = new Darbuotojas("petras", "petraitis", 1200);
+// let jonas = new Darbuotojas("jonas", "jonaitis", 1200);
+// let petras = new Darbuotojas("petras", "petraitis", 1200);
 const pirmaeilisDarbuotojas = new PirmaeilisDarbuotojas("jonas", "jonaitis", 500);
 console.log(pirmaeilisDarbuotojas.perskaiciuotiNPD());
 console.log(pirmaeilisDarbuotojas.gpm());
