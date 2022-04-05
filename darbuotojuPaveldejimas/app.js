@@ -45,6 +45,12 @@ class PirmaeilisDarbuotojas extends Darbuotojas {
     set npd(npd) {
         this._npd = npd;
     }
+    get atlyginimas() {
+        return this._atlyginimas;
+    }
+    set atlyginimas(atlyginimas) {
+        this._atlyginimas = atlyginimas;
+    }
     perskaiciuotiNPD() {
         if (this._atlyginimas < 730) {
             return (this._npd = 460);
@@ -68,6 +74,7 @@ class PraktikantasDarbuotojas extends Darbuotojas {
 // let jonas = new Darbuotojas("jonas", "jonaitis", 1200);
 // let petras = new Darbuotojas("petras", "petraitis", 1200);
 const jonas = new PirmaeilisDarbuotojas("Jonas", "jonaitis", 500);
+jonas.atlyginimas = 2000;
 const petras = new PirmaeilisDarbuotojas("Petras", "petraitis", 2000);
 const onute = new PraktikantasDarbuotojas("Onute", "Petraite");
 let imone = [];
