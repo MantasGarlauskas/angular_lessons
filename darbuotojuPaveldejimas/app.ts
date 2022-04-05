@@ -38,6 +38,7 @@ class Darbuotojas {
 class PirmaeilisDarbuotojas extends Darbuotojas {
   constructor(_vardas: string, _pavarde: string, _atlyginimas: number) {
     super(_vardas, _pavarde, _atlyginimas);
+    this.perskaiciuotiNPD();
   }
   public _npd: number = 0;
   public perskaiciuotiNPD() {
@@ -66,13 +67,16 @@ class PraktikantasDarbuotojas extends Darbuotojas {
 // let petras = new Darbuotojas("petras", "petraitis", 1200);
 
 const jonas = new PirmaeilisDarbuotojas("Jonas", "jonaitis", 500);
-const petras = new PirmaeilisDarbuotojas("Petras", "petraitis", 500);
+const petras = new PirmaeilisDarbuotojas("Petras", "petraitis", 2000);
 
 let imone: Darbuotojas[] = [];
 imone.push(jonas);
 imone.push(petras);
 
-imone.forEach((darbuotojas: Darbuotojas) => {
+console.log(jonas);
+console.log(petras);
+
+imone.forEach((darbuotojas) => {
   console.log(
     `Darbuotojo vardas ${darbuotojas.vardas}, pavarde ${
       darbuotojas.pavarde
@@ -80,6 +84,6 @@ imone.forEach((darbuotojas: Darbuotojas) => {
   );
 });
 
-console.log(jonas.perskaiciuotiNPD());
-console.log(jonas.gpm());
-console.log(jonas);
+// console.log(jonas.perskaiciuotiNPD());
+// console.log(jonas.gpm());
+// console.log(jonas);
