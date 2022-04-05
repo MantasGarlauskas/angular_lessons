@@ -69,16 +69,31 @@ class PirmaeilisDarbuotojas extends Darbuotojas {
     }
 }
 class PraktikantasDarbuotojas extends Darbuotojas {
-    constructor(_vardas, _pavarde, _atlyginimas = 0) {
+    constructor(_vardas, _pavarde, _atlyginimas) {
         super(_vardas, _pavarde, _atlyginimas);
+    }
+    get atlyginimas() {
+        return this._atlyginimas;
+    }
+    set atlyginimas(atlyginimas) {
+        this._atlyginimas = atlyginimas;
+    }
+    gpm() {
+        return Math.round(this._atlyginimas * 0.2);
+    }
+    psd() {
+        return Math.round(this._atlyginimas * 0.0698);
+    }
+    vsd() {
+        return Math.round(this._atlyginimas * 0.01252);
     }
 }
 // let jonas = new Darbuotojas("jonas", "jonaitis", 1200);
 // let petras = new Darbuotojas("petras", "petraitis", 1200);
-const jonas = new PirmaeilisDarbuotojas("Jonas", "jonaitis", 500);
+const jonas = new PirmaeilisDarbuotojas("Jonas", "Jonaitis", 500);
 jonas.atlyginimas = 2000;
-const petras = new PirmaeilisDarbuotojas("Petras", "petraitis", 2000);
-const onute = new PraktikantasDarbuotojas("Onute", "Petraite");
+const petras = new PirmaeilisDarbuotojas("Petras", "Petraitis", 2000);
+const onute = new PraktikantasDarbuotojas("Onute", "Petraite", 0);
 let imone = [];
 imone.push(jonas);
 imone.push(petras);
