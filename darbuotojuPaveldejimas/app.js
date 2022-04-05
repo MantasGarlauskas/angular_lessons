@@ -39,6 +39,12 @@ class PirmaeilisDarbuotojas extends Darbuotojas {
         this._npd = 0;
         this.perskaiciuotiNPD();
     }
+    get npd() {
+        return this._npd;
+    }
+    set npd(npd) {
+        this._npd = npd;
+    }
     perskaiciuotiNPD() {
         if (this._atlyginimas < 730) {
             return (this._npd = 460);
@@ -63,13 +69,14 @@ class PraktikantasDarbuotojas extends Darbuotojas {
 // let petras = new Darbuotojas("petras", "petraitis", 1200);
 const jonas = new PirmaeilisDarbuotojas("Jonas", "jonaitis", 500);
 const petras = new PirmaeilisDarbuotojas("Petras", "petraitis", 2000);
+const onute = new PraktikantasDarbuotojas("Onute", "Petraite");
 let imone = [];
 imone.push(jonas);
 imone.push(petras);
-console.log(jonas);
-console.log(petras);
+imone.push(onute);
+console.log(imone);
 imone.forEach((darbuotojas) => {
-    console.log(`Darbuotojo vardas ${darbuotojas.vardas}, pavarde ${darbuotojas.pavarde}, atlyginimas ${darbuotojas.atlyginimas}, GPM ${darbuotojas.gpm()}`);
+    console.log(`Darbuotojo vardas ${darbuotojas.vardas}, pavarde ${darbuotojas.pavarde}, atlyginimas ${darbuotojas.atlyginimas}, GPM ${darbuotojas.gpm()}, PSD ${darbuotojas.psd()}, VSD ${darbuotojas.vsd()}`);
 });
 // console.log(jonas.perskaiciuotiNPD());
 // console.log(jonas.gpm());
